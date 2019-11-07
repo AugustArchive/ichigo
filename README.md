@@ -1,8 +1,8 @@
-# {{ name }}
-> {{ emoji }} **| {{ description }}**
+# Ichigo
+> :love_letter: **| [Discord](https://discordapp.com) RPC client made in [TypeScript](https://typescriptlang.org)**
 
 ## LICENSE
-> {{ name }} is released under the **MIT** License
+> **Ichigo** is released under the **MIT** License
 
 ```
 Copyright (c) 2019 August
