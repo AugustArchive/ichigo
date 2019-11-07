@@ -1,11 +1,11 @@
 {
-    "name": "{{ name }}",
-    "description": "{{ description }}",
+    "name": "@augu/ichigo",
+    "description": ":love_letter: | Discord RPC client made in TypeScript",
     "version": "1.0.0",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/auguwu/{{ name }}"
+        "url": "https://github.com/auguwu/ichigo"
     }
 }
