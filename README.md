@@ -3,24 +3,24 @@
 
 ## Example
 ```ts
-import Ichigo, { TimestampBuilder } from '@augu/ichigo';
+import { Ichigo } from '@augu/ichigo';
 const rpc = new Ichigo('');
 
 rpc.on('open', () => console.log('[Ichigo] Opened connection.'));
 rpc.on('error', (error) => console.error('[Ichigo] Unknown error!', error));
 rpc.on('ready', () => {
     console.log('[Ichigo] Ready!');
-    rpc.setActivity(process.pid, {
+    rpc.setActivity({
         instance: false,
         state: 'State',
         details: 'Details',
-        timestamps: new TimestampBuilder()
-            .setStartTime(Date.getTime() / 1000)
-            .parse()
+        timestamps: {
+            start: new Date().getTime()
+        }
     });
 });
 
-rpc.start();
+rpc.connect();
 ```
 
 ## LICENSE
