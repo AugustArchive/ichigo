@@ -1,9 +1,10 @@
 {
     "name": "@augu/ichigo",
-    "description": ":love_letter: | Discord RPC client made in TypeScript",
+    "description": "💌 Discord RPC client made in TypeScript",
     "version": "1.0.0",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
+    "types": "index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/auguwu/ichigo"

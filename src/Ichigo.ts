@@ -91,6 +91,10 @@ export default class Ichigo extends EventEmitter {
     }
 
     on(event: 'connect', listener: () => void): this;
+    on(event: 'error', listener: (error: any) => void): this;
+    on(event: 'close', listener: (error: any) => void): this;
+    on(event: 'open', listener: () => void): this;
+    on(event: 'wtf', listener: (m: string) => void): this;
     on(event: string, listener: (...args: any[]) => void) {
         return super.on(event, listener);
     }
