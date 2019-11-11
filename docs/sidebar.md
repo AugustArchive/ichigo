@@ -1,8 +1,8 @@
-# General
-- [Getting Started](/general/started)
+- General
+    - [Getting Started](/general/started)
 
-# Classes
-- [Ichigo](/typedefs/Ichigo)
+- Classes
+    - [Ichigo](/typedefs/Ichigo)
 
-# Type Definitions
-- [ActivityOptions](/typedefs/ActivityOptions)
+- Type Definitions
+    - [ActivityOptions](/typedefs/ActivityOptions)
