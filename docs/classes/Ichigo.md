@@ -7,7 +7,7 @@ new Ichigo(clientID);
 ```
 
 ## Functions
-### `Ichigo.send(cmd: string, args: object)`: void
+### Ichigo.send(cmd: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), args: [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)): void
 > Sends a object to the IPC server
 
 ```js
@@ -17,14 +17,14 @@ Ichigo.send('SET_ACTIVITY', {
 });
 ```
 
-### `Ichigo.setActivity(activity: <a href="../typedefs/ActivityOptions">ActivityOptions</a>)`: void
+### Ichigo.setActivity(activity: [ActivityOptions](../typedefs/ActivityOptions.md)): void
 > Sets the activity (without using `Ichigo#send`)
 
 ```js
 Ichigo.setActivity({});
 ```
 
-### `Ichigo.connect()`: void
+### Ichigo.connect(): void
 > Connects to the IPC server
 
 ```js
