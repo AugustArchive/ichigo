@@ -17,7 +17,7 @@ Ichigo.send('SET_ACTIVITY', {
 });
 ```
 
-### `Ichigo.setActivity(activity: [ActivityOptions](../typedefs/ActivityOptions))`: void
+### `Ichigo.setActivity(activity: <a href="../typedefs/ActivityOptions">ActivityOptions</a>)`: void
 > Sets the activity (without using `Ichigo#send`)
 
 ```js
@@ -38,3 +38,4 @@ Ichigo.connect();
 |`open`|Sends when the connection has opened|`() => void`|
 |`close`|Sends when the connection has closed|`(error?: any) => void`|
 |`error`|Sends when an error occured|`(error: any) => void`|
+|`connect`|Sends when a connection has been established by the socket|`() => void`|
