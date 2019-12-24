@@ -1,5 +1,7 @@
 # Ichigo
 > :love_letter: **| [Discord](https://discordapp.com) RPC client made in [TypeScript](https://typescriptlang.org), based on [discord-µrpc](https://github.com/rellfy/discord-urpc)**
+>
+> [Documentation](https://auguwu.github.io/Ichigo) **|** [NPM](https://npmjs.com/package/@augu/ichigo)
 
 ## Example
 ```ts
