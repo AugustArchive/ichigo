@@ -8,7 +8,7 @@ module.exports = {
     excludeProtected: true,
     excludeNotExported: true,
     readme: 'README.md',
-    name: 'Immutable',
+    name: 'Ichigo',
     ignoreCompilerErrors: true,
     listInvalidSymbolLinks: true
 };
