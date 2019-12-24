@@ -12,8 +12,8 @@
         "url": "https://github.com/auguwu/ichigo"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "2.11.0",
-        "@typescript-eslint/parser": "2.11.0",
+        "@typescript-eslint/eslint-plugin": "2.13.0",
+        "@typescript-eslint/parser": "2.13.0",
         "@types/node": "12.12.21",
         "typescript": "3.7.3"
     }
