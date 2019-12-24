@@ -1,7 +1,7 @@
 {
     "name": "@augu/ichigo",
     "description": "💌 Discord RPC client made in TypeScript",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
     "types": "index.d.ts",
@@ -15,13 +15,14 @@
         "prepare": "yarn docs && yarn build",
         "build": "yarn lint && rm -fr build && tsc",
         "lint": "eslint src --ext .ts --fix",
-        "docs": "rm -fr docs && typedoc"
+        "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
     },
     "devDependencies": {
         "@augu/eslint-config": "1.0.2",
         "@typescript-eslint/eslint-plugin": "2.13.0",
         "@typescript-eslint/parser": "2.13.0",
         "@types/node": "12.12.22",
+        "eslint": "6.8.0",
         "typescript": "3.7.4",
         "typedoc": "0.15.5"
     }
