@@ -18,7 +18,7 @@
         "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
     },
     "devDependencies": {
-        "@augu/eslint-config": "1.0.2",
+        "@augu/eslint-config": "1.0.3",
         "@typescript-eslint/eslint-plugin": "2.13.0",
         "@typescript-eslint/parser": "2.13.0",
         "@types/node": "12.12.22",
