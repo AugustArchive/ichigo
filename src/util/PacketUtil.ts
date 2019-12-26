@@ -42,7 +42,8 @@ export const decode = (socket: Socket, callback: (result: DecodeResult) => void)
     if (working.full === '') {
         op = working.op = packet.readInt32LE(0);
         raw = packet.slice(8, packet.readInt32LE(4) + 8);
-    } else {
+    }
+    else {
         raw = packet.toString();
     }
 
@@ -51,7 +52,8 @@ export const decode = (socket: Socket, callback: (result: DecodeResult) => void)
         callback({ op: op!, data });
         working.full = '';
         working.op = null;
-    } catch {
+    }
+    catch {
         working.full += raw;
     }
 

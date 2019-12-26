@@ -1,17 +1,8 @@
-import { EventEmitter } from 'events';
-import { Socket } from 'net';
+declare module '@augu/ichigo' {
+    import { EventEmitter } from 'events';
+    import { Collection } from '@augu/immutable';
+    import { Socket } from 'net';
 
-/**
- * Creates a new instance of the Ichigo instance
- * @param clientID The client ID
- * @returns The Ichigo instance
- */
-declare function Ichigo(clientID: string): Ichigo.Ichigo;
-
-/**
- * The Ichigo namespace
- */
-declare namespace Ichigo {
     /**
      * The activity options to add to the RPC instance
      */
@@ -109,6 +100,11 @@ declare namespace Ichigo {
         }
     }
 
+    interface ExpectingMessage<T = any> {
+        resolve(value?: T | PromiseLike<T>): void;
+        reject(error?: any): void;
+    }
+
     /**
      * Returns the version of Ichigo
      */
@@ -182,6 +178,11 @@ declare namespace Ichigo {
         public ipc: DiscordIPC;
 
         /**
+         * All of the expecting messages will be here
+         */
+        public expecting: Collection<ExpectingMessage>;
+
+        /**
          * Connects to the local IPC server
          */
         public connect(): void;
@@ -191,13 +192,13 @@ declare namespace Ichigo {
          * @param cmd The command name
          * @param args Any arguments to send
          */
-        public send(cmd: string, args: { [x: string]: any; }): void;
+        public send<T>(cmd: string, args: { [x: string]: any; }): Promise<T>;
 
         /**
          * Sets the activity of the RPC
          * @param activity The activity to set
          */
-        public setActivity(activity: ActivityOptions): void;
+        public setActivity(activity: ActivityOptions): Promise<any>;
 
         /**
          * Emitted when the connection is opened
@@ -241,7 +242,7 @@ declare namespace Ichigo {
         export const VERSION: string;
 
         /**
-         * The OPCodes
+         * The OPCodes for the Socket from Discord
          */
         export enum OPCodes {
             HANDSHAKE,
@@ -252,12 +253,48 @@ declare namespace Ichigo {
         }
 
         /**
-         * The commands to send to Discord
-         */
+        * The commands to send to Discord
+        */
         export enum RequestCommand {
-            SET_ACTIVITY = 'SET_ACTIVITY'
+            /**
+            * Sets the activity for Discord
+            */
+            SetActivity = 'SET_ACTIVITY'
+        }
+
+        /**
+        * The relationship types
+        */
+        export enum RelationshipTypes {
+            /**
+            * Not a friend nor blocked
+            */
+            NONE,
+
+            /**
+            * Is a friend
+            */
+            FRIEND,
+
+            /**
+            * Blocked from the user or you blocked
+            */
+            BLOCKED,
+
+            /**
+            * Pending Relationship (incoming)
+            */
+            PENDING_INCOMING,
+
+            /**
+            * Pending Relationship (outgoing)
+            */
+            PENDING_OUTGOING,
+
+            /**
+            * Unknown at this time
+            */
+            IMPLICIT
         }
     }
 }
-
-export = Ichigo;

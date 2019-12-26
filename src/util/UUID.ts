@@ -10,11 +10,13 @@ export default () => {
         let n: number;
         if (i === 12) {
             n = 4;
-        } else {
+        }
+        else {
             const random = (Math.random() * 16) | 0;
             if (i === 16) {
                 n = (random & 3) | 0;
-            } else {
+            }
+            else {
                 n = random;
             }
         }

@@ -1,7 +1,7 @@
 {
     "name": "@augu/ichigo",
     "description": "💌 Discord RPC client made in TypeScript",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
     "types": "index.d.ts",
@@ -16,6 +16,9 @@
         "build": "yarn lint && rm -fr build && tsc",
         "lint": "eslint src --ext .ts --fix",
         "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
+    },
+    "dependencies": {
+        "@augu/immutable": "0.1.1"
     },
     "devDependencies": {
         "@augu/eslint-config": "1.0.3",

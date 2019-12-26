@@ -28,7 +28,8 @@ export const getIPC = (id: number = 0) => new Promise<Socket>((resolve, reject) 
     const onError = () => {
         if (id < 10) {
             resolve(getIPC(id + 1));
-        } else {
+        }
+        else {
             reject(new Error('Could not connect to IPC server'));
         }
     };

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RequestCommand | Ichigo</title>
+	<title>RelationshipTypes | Ichigo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="requestcommand.html">RequestCommand</a>
+					<a href="relationshiptypes.html">RelationshipTypes</a>
 				</li>
 			</ul>
-			<h1>Enumeration RequestCommand</h1>
+			<h1>Enumeration RelationshipTypes</h1>
 		</div>
 	</div>
 </header>
@@ -65,7 +65,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The commands to send to Discord</p>
+						<p>The relationship types</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,12 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="requestcommand.html#setactivity" class="tsd-kind-icon">Set<wbr>Activity</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#blocked" class="tsd-kind-icon">BLOCKED</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#friend" class="tsd-kind-icon">FRIEND</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#implicit" class="tsd-kind-icon">IMPLICIT</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#none" class="tsd-kind-icon">NONE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#pending_incoming" class="tsd-kind-icon">PENDING_<wbr>INCOMING</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="relationshiptypes.html#pending_outgoing" class="tsd-kind-icon">PENDING_<wbr>OUTGOING</a></li>
 							</ul>
 						</section>
 					</div>
@@ -85,17 +90,92 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="setactivity" class="tsd-anchor"></a>
-					<h3>Set<wbr>Activity</h3>
-					<div class="tsd-signature tsd-kind-icon">Set<wbr>Activity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;SET_ACTIVITY&quot;</span></div>
+					<a name="blocked" class="tsd-anchor"></a>
+					<h3>BLOCKED</h3>
+					<div class="tsd-signature tsd-kind-icon">BLOCKED<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L24">src/util/Constants.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L44">src/util/Constants.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Sets the activity for Discord</p>
+							<p>Blocked from the user or you blocked</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="friend" class="tsd-anchor"></a>
+					<h3>FRIEND</h3>
+					<div class="tsd-signature tsd-kind-icon">FRIEND<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L39">src/util/Constants.ts:39</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Is a friend</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="implicit" class="tsd-anchor"></a>
+					<h3>IMPLICIT</h3>
+					<div class="tsd-signature tsd-kind-icon">IMPLICIT<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L59">src/util/Constants.ts:59</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Unknown at this time</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="none" class="tsd-anchor"></a>
+					<h3>NONE</h3>
+					<div class="tsd-signature tsd-kind-icon">NONE<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L34">src/util/Constants.ts:34</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Not a friend nor blocked</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="pending_incoming" class="tsd-anchor"></a>
+					<h3>PENDING_<wbr>INCOMING</h3>
+					<div class="tsd-signature tsd-kind-icon">PENDING_<wbr>INCOMING<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L49">src/util/Constants.ts:49</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Pending Relationship (incoming)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="pending_outgoing" class="tsd-anchor"></a>
+					<h3>PENDING_<wbr>OUTGOING</h3>
+					<div class="tsd-signature tsd-kind-icon">PENDING_<wbr>OUTGOING<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/65b86ed/src/util/Constants.ts#L54">src/util/Constants.ts:54</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Pending Relationship (outgoing)</p>
 						</div>
 					</div>
 				</section>
@@ -114,21 +194,36 @@
 					<li class=" tsd-kind-enum">
 						<a href="opcodes.html" class="tsd-kind-icon">OPCodes</a>
 					</li>
-					<li class=" tsd-kind-enum">
-						<a href="relationshiptypes.html" class="tsd-kind-icon">Relationship<wbr>Types</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum">
-						<a href="requestcommand.html" class="tsd-kind-icon">Request<wbr>Command</a>
+						<a href="relationshiptypes.html" class="tsd-kind-icon">Relationship<wbr>Types</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="requestcommand.html#setactivity" class="tsd-kind-icon">Set<wbr>Activity</a>
+								<a href="relationshiptypes.html#blocked" class="tsd-kind-icon">BLOCKED</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="relationshiptypes.html#friend" class="tsd-kind-icon">FRIEND</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="relationshiptypes.html#implicit" class="tsd-kind-icon">IMPLICIT</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="relationshiptypes.html#none" class="tsd-kind-icon">NONE</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="relationshiptypes.html#pending_incoming" class="tsd-kind-icon">PENDING_<wbr>INCOMING</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="relationshiptypes.html#pending_outgoing" class="tsd-kind-icon">PENDING_<wbr>OUTGOING</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-enum">
+						<a href="requestcommand.html" class="tsd-kind-icon">Request<wbr>Command</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="../classes/discordipc.html" class="tsd-kind-icon">DiscordIPC</a>
 					</li>

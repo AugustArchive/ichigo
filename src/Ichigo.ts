@@ -1,5 +1,6 @@
-import { OPCodes, RequestCommand } from './util/Constants';
+import { OPCodes, RequestCommand, RelationshipTypes } from './util/Constants';
 import { EventEmitter } from 'events';
+import { Collection } from '@augu/immutable';
 import DiscordIPC from './DiscordIPC';
 import uuid from './util/UUID';
 
@@ -102,6 +103,11 @@ interface ActivityOptions {
     }
 }
 
+interface RPCMessageExpecting<T = any> {
+    resolve: (value?: T | PromiseLike<T>) => void;
+    reject: (error?: any) => void;
+}
+
 /**
  * The client itself, used for "controlling" the RPC connection
  */
@@ -110,6 +116,8 @@ export default class Ichigo extends EventEmitter {
      * The IPC connection to control
      */
     public ipc: DiscordIPC;
+
+    public expecting: Collection<RPCMessageExpecting> = new Collection();
 
     /**
      * Creates a new instance of the Ichigo client
@@ -121,16 +129,22 @@ export default class Ichigo extends EventEmitter {
         this.ipc = new DiscordIPC(clientID);
         this._addExternalListeners();
 
-        this.ipc.on('message', (event) => {
-            switch (event.evt) {
-                case 'READY': {
-                    this.emit('ready');
-                } break;
-                default: {
-                    this.emit('debug', event);
-                } break;
-            }
-        });
+        this.ipc.on('message', this.onMessage);
+    }
+
+    private onMessage(message: any) {
+        if (message.cmd === 'DISPATCH' && message.evt === 'READY') {
+            this.emit('ready');
+        } 
+        else if (this.expecting.has(message.nonce)) {
+            const { resolve, reject } = this.expecting.get(message.nonce)!;
+            if (message.evt === 'ERROR') reject(new Error(message.data.message));
+            else resolve(message.data);
+
+            // eslint-disable-next-line dot-notation
+            this.expecting.delete(message.nonce);
+        }
+        else this.emit('debug', message);
     }
 
     /**
@@ -145,11 +159,11 @@ export default class Ichigo extends EventEmitter {
      * @param cmd The command name
      * @param args Any arguments to send 
      */
-    send(cmd: string, args: { [x: string]: any }) {
-        this.ipc.send(OPCodes.FRAME, {
-            cmd,
-            args,
-            nonce: uuid()
+    send<T>(cmd: string, args?: { [x: string]: any }) {
+        return new Promise<T>((resolve, reject) => {
+            const nonce = uuid();
+            this.ipc.send(OPCodes.FRAME, { cmd, args, nonce });
+            this.expecting.set(nonce, { resolve, reject });
         });
     }
 
@@ -158,7 +172,7 @@ export default class Ichigo extends EventEmitter {
      * @param activity The activity to set
      */
     setActivity(activity: ActivityOptions) {
-        return this.send(RequestCommand.SET_ACTIVITY, {
+        return this.send(RequestCommand.SetActivity, {
             pid: process.pid,
             activity
         });
