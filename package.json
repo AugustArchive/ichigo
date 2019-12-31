@@ -21,7 +21,7 @@
         "@augu/immutable": "0.1.1"
     },
     "devDependencies": {
-        "@augu/eslint-config": "1.0.3",
+        "@augu/eslint-config": "1.0.5",
         "@typescript-eslint/eslint-plugin": "2.14.0",
         "@typescript-eslint/parser": "2.14.0",
         "@types/node": "12.12.22",
