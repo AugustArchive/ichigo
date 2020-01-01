@@ -1,11 +1,11 @@
 {
     "name": "@augu/ichigo",
     "description": "💌 Discord RPC client made in TypeScript",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
     "types": "index.d.ts",
-    "files": ["build/", "index.d.ts"],
+    "files": ["build/", "esm.mjs", "index.d.ts"],
     "main": "build/index.js",
     "exports": {
         ".": [
