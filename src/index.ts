@@ -6,15 +6,6 @@ import Ichigo from './Ichigo';
  */
 export const version: string = Constants.VERSION;
 
-/**
- * Constructs a new instance of Ichigo
- * @param clientID The client ID to use
- * @returns The new Ichigo instance
- */
-function Instance(clientID: string) {
-    return new Ichigo(clientID);
-}
-
-export default Instance;
-module.exports = Instance;
+module.exports = Ichigo;
+export default Ichigo;
 export { Ichigo, Constants };

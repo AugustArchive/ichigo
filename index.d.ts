@@ -165,7 +165,7 @@ declare module '@augu/ichigo' {
     /**
      * The instance used as an "controller" of the RPC connection
      */
-    export class Ichigo {
+    export default class Ichigo {
         /**
          * Creates a new instance of the Ichigo instance
          * @param clientID The client ID
@@ -237,7 +237,7 @@ declare module '@augu/ichigo' {
      */
     export namespace Constants {
         /**
-         * The version of the Component
+         * Semantic version of Ichigo
          */
         export const VERSION: string;
 

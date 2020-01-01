@@ -1,12 +1,22 @@
 {
     "name": "@augu/ichigo",
     "description": "💌 Discord RPC client made in TypeScript",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "license": "MIT",
     "author": "August <augu@voided.pw>",
     "types": "index.d.ts",
     "files": ["build/", "index.d.ts"],
     "main": "build/index.js",
+    "exports": {
+        ".": [
+            {
+                "require": "./build/index.js",
+                "import": "./esm.mjs"
+            },
+            "./build/index.js"
+        ],
+        "./esm": "./esm.mjs"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/auguwu/ichigo"
