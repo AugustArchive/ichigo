@@ -28,7 +28,7 @@
         "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
     },
     "dependencies": {
-        "@augu/immutable": "0.1.2"
+        "@augu/immutable": "0.1.3"
     },
     "devDependencies": {
         "@augu/eslint-config": "1.0.5",
