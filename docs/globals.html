@@ -52,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> Ichigo</h1>
+			<h1>Ichigo</h1>
 		</div>
 	</div>
 </header>
@@ -79,6 +79,14 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/activityoptions.html" class="tsd-kind-icon">Activity<wbr>Options</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/decoderesult.html" class="tsd-kind-icon">Decode<wbr>Result</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/rpcmessageexpecting.html" class="tsd-kind-icon">RPCMessage<wbr>Expecting</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#version" class="tsd-kind-icon">VERSION</a></li>
@@ -102,10 +110,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="version" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> VERSION</h3>
-					<div class="tsd-signature tsd-kind-icon">VERSION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;require(&#x27;../../package.json&#x27;).version</span></div>
+					<div class="tsd-signature tsd-kind-icon">VERSION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = require(&#x27;../../package.json&#x27;).version</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/util/Constants.ts#L4">src/util/Constants.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/Constants.ts#L4">src/util/Constants.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -117,10 +125,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="version" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> version</h3>
-					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;Constants.VERSION</span></div>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = Constants.VERSION</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/index.ts#L7">src/index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/index.ts#L7">src/index.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -136,13 +144,13 @@
 					<a name="decode" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> decode</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>socket<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Socket</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>socket<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Socket</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><a href="interfaces/decoderesult.html" class="tsd-signature-type">DecodeResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/util/PacketUtil.ts#L31">src/util/PacketUtil.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/PacketUtil.ts#L31">src/util/PacketUtil.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -161,7 +169,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<h5>callback: <span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><a href="interfaces/decoderesult.html" class="tsd-signature-type">DecodeResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>A returning callback</p>
@@ -169,15 +177,15 @@
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DecodeResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><a href="interfaces/decoderesult.html" class="tsd-signature-type">DecodeResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>result: <span class="tsd-signature-type">DecodeResult</span></h5>
+															<h5>result: <a href="interfaces/decoderesult.html" class="tsd-signature-type">DecodeResult</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -202,7 +210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/util/PacketUtil.ts#L14">src/util/PacketUtil.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/PacketUtil.ts#L14">src/util/PacketUtil.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,7 +252,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/util/IPCUtil.ts#L26">src/util/IPCUtil.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/IPCUtil.ts#L26">src/util/IPCUtil.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -255,7 +263,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> id: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> id: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>The ID</p>
@@ -277,7 +285,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/6edac38/src/util/IPCUtil.ts#L7">src/util/IPCUtil.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/IPCUtil.ts#L7">src/util/IPCUtil.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -326,6 +334,15 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/ichigo.html" class="tsd-kind-icon">Ichigo</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/activityoptions.html" class="tsd-kind-icon">Activity<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/decoderesult.html" class="tsd-kind-icon">Decode<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/rpcmessageexpecting.html" class="tsd-kind-icon">RPCMessage<wbr>Expecting</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#version" class="tsd-kind-icon">VERSION</a>

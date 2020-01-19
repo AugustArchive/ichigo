@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ichigo</title>
+	<title>DecodeResult | Ichigo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Ichigo</a>
+					<a href="../index.html" class="title">Ichigo</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -49,123 +49,128 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="decoderesult.html">DecodeResult</a>
 				</li>
 			</ul>
-			<h1>Ichigo</h1>
+			<h1>Interface DecodeResult</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#ichigo" id="ichigo" style="color: inherit; text-decoration: none;">
-					<h1>Ichigo</h1>
-				</a>
-				<blockquote>
-					<p>:love_letter: <strong>| <a href="https://discordapp.com">Discord</a> RPC client made in <a href="https://typescriptlang.org">TypeScript</a>, based on <a href="https://github.com/rellfy/discord-urpc">discord-µrpc</a></strong></p>
-					<p><a href="https://auguwu.github.io/Ichigo">Documentation</a> <strong>|</strong> <a href="https://npmjs.com/package/@augu/ichigo">NPM</a></p>
-				</blockquote>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h2>Example</h2>
-				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Ichigo } <span class="hljs-keyword">from</span> <span class="hljs-string">'@augu/ichigo'</span>;
-<span class="hljs-keyword">const</span> rpc = <span class="hljs-keyword">new</span> Ichigo(<span class="hljs-string">''</span>);
-
-rpc.on(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Ichigo] Opened connection.'</span>));
-rpc.on(<span class="hljs-string">'error'</span>, <span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'[Ichigo] Unknown error!'</span>, error));
-rpc.on(<span class="hljs-string">'ready'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[Ichigo] Ready!'</span>);
-    rpc.setActivity({
-        instance: <span class="hljs-literal">false</span>,
-        state: <span class="hljs-string">'State'</span>,
-        details: <span class="hljs-string">'Details'</span>,
-        timestamps: {
-            start: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()
-        }
-    });
-});
-
-rpc.connect();</code></pre>
-				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
-					<h2>LICENSE</h2>
-				</a>
-				<blockquote>
-					<p><strong>Ichigo</strong> is released under the <strong>MIT</strong> License</p>
-				</blockquote>
-				<pre><code>Copyright (c) 2019 August
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to <span class="hljs-keyword">use</span>, copy, <span class="hljs-keyword">modify</span>, <span class="hljs-keyword">merge</span>, publish, <span class="hljs-keyword">distribute</span>, sublicense, <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> sell
-copies <span class="hljs-keyword">of</span> the Software, <span class="hljs-keyword">and</span> <span class="hljs-keyword">to</span> permit persons <span class="hljs-keyword">to</span> whom the Software <span class="hljs-keyword">is</span>
-furnished <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> so, subject <span class="hljs-keyword">to</span> the <span class="hljs-keyword">following</span> conditions:
-
-The above copyright <span class="hljs-keyword">notice</span> <span class="hljs-keyword">and</span> this permission <span class="hljs-keyword">notice</span> shall be included <span class="hljs-keyword">in</span> <span class="hljs-keyword">all</span>
-copies <span class="hljs-keyword">or</span> substantial portions <span class="hljs-keyword">of</span> the Software.
-
-THE SOFTWARE <span class="hljs-keyword">IS</span> PROVIDED <span class="hljs-string">"AS IS"</span>, <span class="hljs-keyword">WITHOUT</span> WARRANTY <span class="hljs-keyword">OF</span> <span class="hljs-keyword">ANY</span> KIND, EXPRESS <span class="hljs-keyword">OR</span>
-IMPLIED, <span class="hljs-keyword">INCLUDING</span> BUT <span class="hljs-keyword">NOT</span> LIMITED <span class="hljs-keyword">TO</span> THE WARRANTIES <span class="hljs-keyword">OF</span> MERCHANTABILITY,
-FITNESS <span class="hljs-keyword">FOR</span> A PARTICULAR PURPOSE <span class="hljs-keyword">AND</span> NONINFRINGEMENT. <span class="hljs-keyword">IN</span> <span class="hljs-keyword">NO</span> <span class="hljs-keyword">EVENT</span> SHALL THE
-<span class="hljs-keyword">AUTHORS</span> <span class="hljs-keyword">OR</span> COPYRIGHT HOLDERS BE LIABLE <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">ANY</span> CLAIM, DAMAGES <span class="hljs-keyword">OR</span> OTHER
-LIABILITY, WHETHER <span class="hljs-keyword">IN</span> AN <span class="hljs-keyword">ACTION</span> <span class="hljs-keyword">OF</span> CONTRACT, TORT <span class="hljs-keyword">OR</span> OTHERWISE, ARISING <span class="hljs-keyword">FROM</span>,
-<span class="hljs-keyword">OUT</span> <span class="hljs-keyword">OF</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">IN</span> <span class="hljs-keyword">CONNECTION</span> <span class="hljs-keyword">WITH</span> THE SOFTWARE <span class="hljs-keyword">OR</span> THE <span class="hljs-keyword">USE</span> <span class="hljs-keyword">OR</span> OTHER DEALINGS <span class="hljs-keyword">IN</span> THE
-SOFTWARE.</code></pre>
-			</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">DecodeResult</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="decoderesult.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="decoderesult.html#op" class="tsd-kind-icon">op</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/PacketUtil.ts#L5">src/util/PacketUtil.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/auguwu/ichigo/blob/1267a62/src/util/PacketUtil.ts#L4">src/util/PacketUtil.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="enums/opcodes.html" class="tsd-kind-icon">OPCodes</a>
+						<a href="../enums/opcodes.html" class="tsd-kind-icon">OPCodes</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="enums/relationshiptypes.html" class="tsd-kind-icon">Relationship<wbr>Types</a>
+						<a href="../enums/relationshiptypes.html" class="tsd-kind-icon">Relationship<wbr>Types</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="enums/requestcommand.html" class="tsd-kind-icon">Request<wbr>Command</a>
+						<a href="../enums/requestcommand.html" class="tsd-kind-icon">Request<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/discordipc.html" class="tsd-kind-icon">DiscordIPC</a>
+						<a href="../classes/discordipc.html" class="tsd-kind-icon">DiscordIPC</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/ichigo.html" class="tsd-kind-icon">Ichigo</a>
+						<a href="../classes/ichigo.html" class="tsd-kind-icon">Ichigo</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/activityoptions.html" class="tsd-kind-icon">Activity<wbr>Options</a>
+						<a href="activityoptions.html" class="tsd-kind-icon">Activity<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/decoderesult.html" class="tsd-kind-icon">Decode<wbr>Result</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="decoderesult.html" class="tsd-kind-icon">Decode<wbr>Result</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="decoderesult.html#data" class="tsd-kind-icon">data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="decoderesult.html#op" class="tsd-kind-icon">op</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/rpcmessageexpecting.html" class="tsd-kind-icon">RPCMessage<wbr>Expecting</a>
+						<a href="rpcmessageexpecting.html" class="tsd-kind-icon">RPCMessage<wbr>Expecting</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#version" class="tsd-kind-icon">VERSION</a>
+						<a href="../globals.html#version" class="tsd-kind-icon">VERSION</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#version" class="tsd-kind-icon">version</a>
+						<a href="../globals.html#version" class="tsd-kind-icon">version</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#decode" class="tsd-kind-icon">decode</a>
+						<a href="../globals.html#decode" class="tsd-kind-icon">decode</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#encode" class="tsd-kind-icon">encode</a>
+						<a href="../globals.html#encode" class="tsd-kind-icon">encode</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#getipc" class="tsd-kind-icon">getIPC</a>
+						<a href="../globals.html#getipc" class="tsd-kind-icon">getIPC</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#getipcpath" class="tsd-kind-icon">getIPCPath</a>
+						<a href="../globals.html#getipcpath" class="tsd-kind-icon">getIPCPath</a>
 					</li>
 				</ul>
 			</nav>
@@ -236,7 +241,7 @@ SOFTWARE.</code></pre>
 	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
