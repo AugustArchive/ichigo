@@ -256,8 +256,8 @@ declare module '@augu/ichigo' {
       }
 
       /**
-      * The commands to send to Discord
-      */
+       * The commands to send to Discord
+       */
       export enum RequestCommand {
         /**
          * Sets the activity for Discord

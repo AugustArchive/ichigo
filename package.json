@@ -1,42 +1,42 @@
 {
-    "name": "@augu/ichigo",
-    "description": "💌 Discord RPC client made in TypeScript",
-    "version": "1.1.0",
-    "license": "MIT",
-    "author": "August <augu@voided.pw>",
-    "types": "index.d.ts",
-    "files": ["build/", "esm.mjs", "index.d.ts"],
-    "main": "build/index.js",
-    "exports": {
-        ".": [
-            {
-                "require": "./build/index.js",
-                "import": "./esm.mjs"
-            },
-            "./build/index.js"
-        ],
-        "./esm": "./esm.mjs"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/auguwu/ichigo"
-    },
-    "scripts": {
-        "prepare": "yarn docs && yarn build",
-        "build": "yarn lint && rm -fr build && tsc",
-        "lint": "eslint src --ext .ts --fix",
-        "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
-    },
-    "dependencies": {
-        "@augu/immutable": "0.1.4"
-    },
-    "devDependencies": {
-        "@augu/eslint-config": "1.1.0",
-        "@typescript-eslint/eslint-plugin": "2.16.0",
-        "@typescript-eslint/parser": "2.16.0",
-        "@types/node": "12.12.22",
-        "eslint": "6.8.0",
-        "typescript": "3.7.5",
-        "typedoc": "0.16.7"
-    }
+  "name": "@augu/ichigo",
+  "description": "💌 Discord RPC client made in TypeScript",
+  "version": "1.1.1",
+  "license": "MIT",
+  "author": "August <augu@voided.pw>",
+  "types": "index.d.ts",
+  "files": ["build/", "esm.mjs", "index.d.ts"],
+  "main": "build/index.js",
+  "exports": {
+  ".": [
+      {
+        "require": "./build/index.js",
+        "import": "./esm.mjs"
+      },
+      "./build/index.js"
+    ],
+    "./esm": "./esm.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/auguwu/ichigo"
+  },
+  "scripts": {
+    "prepare": "yarn docs && yarn build",
+    "build": "yarn lint && rm -fr build && tsc",
+    "lint": "eslint src --ext .ts --fix",
+    "docs": "rm -fr docs && typedoc && touch docs/.nojekyll"
+  },
+  "dependencies": {
+    "@augu/immutable": "0.1.6"
+  },
+  "devDependencies": {
+    "@augu/eslint-config": "1.1.0",
+    "@typescript-eslint/eslint-plugin": "2.16.0",
+    "@typescript-eslint/parser": "2.16.0",
+    "@types/node": "12.12.22",
+    "eslint": "6.8.0",
+    "typescript": "3.7.5",
+    "typedoc": "0.16.7"
+  }
 }
