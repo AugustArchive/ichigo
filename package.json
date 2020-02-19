@@ -34,7 +34,7 @@
     "@augu/eslint-config": "1.2.0",
     "@typescript-eslint/eslint-plugin": "2.20.0",
     "@typescript-eslint/parser": "2.20.0",
-    "@types/node": "12.12.22",
+    "@types/node": "12.12.28",
     "eslint": "6.8.0",
     "typescript": "3.7.5",
     "typedoc": "0.16.10"
