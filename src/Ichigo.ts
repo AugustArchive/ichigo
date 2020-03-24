@@ -1,4 +1,4 @@
-import { OPCodes, RequestCommand, RelationshipTypes } from './util/Constants';
+import { OPCodes, RequestCommand } from './util/Constants';
 import { EventEmitter } from 'events';
 import { Collection } from '@augu/immutable';
 import DiscordIPC from './DiscordIPC';
@@ -8,104 +8,104 @@ import uuid from './util/UUID';
  * The activity options to add to the RPC instance
  */
 interface ActivityOptions {
-/**
- * The state of the RPC being used
- * 
- * **NOTE**: The state is on the bottom of the text
- */
-state?: string;
+  /**
+   * The state of the RPC being used
+   * 
+   * **NOTE**: The state is on the bottom of the text
+   */
+  state?: string;
 
-/**
- * The details of the RPC being used
- * 
- * **NOTE**: The details is on the top of the text
- */
-details?: string;
+  /**
+   * The details of the RPC being used
+   * 
+   * **NOTE**: The details is on the top of the text
+   */
+  details?: string;
 
-/**
- * If the RPC is an instance of something
- */
-instance?: boolean;
+  /**
+   * If the RPC is an instance of something
+   */
+  instance?: boolean;
 
-/**
- * Timestamps object, to check on the `Elapsed`/`Ends At` text of the RPC
- */
-timestamps?: {
-/**
- * The start of the timestamp
- */
-start?: number;
+  /**
+   * Timestamps object, to check on the `Elapsed`/`Ends At` text of the RPC
+   */
+  timestamps?: {
+    /**
+     * The start of the timestamp
+     */
+    start?: number;
 
-/**
- * The end of the timestamp
- */
-end?: number;
-}
+    /**
+     * The end of the timestamp
+     */
+    end?: number;
+  }
 
-/**
- * Any assets to use when a user is using the RPC
- */
-assets?: {
-/**
- * The image key to use
- */
-large_image?: string;
+  /**
+   * Any assets to use when a user is using the RPC
+   */
+  assets?: {
+    /**
+     * The image key to use
+     */
+    large_image?: string;
 
-/**
- * The text when the large image is hovered
- */
-large_text?: string;
+    /**
+     * The text when the large image is hovered
+     */
+    large_text?: string;
 
-/**
- * The small image key
- */
-small_image?: string;
+    /**
+     * The small image key
+     */
+    small_image?: string;
 
-/**
- * The text when the small image key is hovered
- */
-small_text?: string;
-}
+    /**
+     * The text when the small image key is hovered
+     */
+    small_text?: string;
+  }
 
-/**
- * The party object, the ability to join/spectate on games
- */
-party?: {
-/**
- * The ID of the party
- */
-id?: any;
+  /**
+   * The party object, the ability to join/spectate on games
+   */
+  party?: {
+    /**
+     * The ID of the party
+     */
+    id?: any;
 
-/**
- * The size of the party
- */
-size?: number[];
-}
+    /**
+     * The size of the party
+     */
+    size?: number[];
+  }
 
-/**
- * Any secret keys to use when a user joins/spectates/matches on a game
- */
-secrets?: {
-/**
- * The join key, when a user can join the game
- */
-join?: string;
+  /**
+   * Any secret keys to use when a user joins/spectates/matches on a game
+   */
+  secrets?: {
+    /**
+     * The join key, when a user can join the game
+     */
+    join?: string;
 
-/**
- * The spectate key, when a user can spectate on a user during a match
- */
-spectate?: string;
+    /**
+     * The spectate key, when a user can spectate on a user during a match
+     */
+    spectate?: string;
 
-/**
- * The match key, when a user can join the other user's match
- */
-match?: string;
-}
+    /**
+     * The match key, when a user can join the other user's match
+     */
+    match?: string;
+  }
 }
 
 interface RPCMessageExpecting<T = any> {
-resolve: (value?: T | PromiseLike<T>) => void;
-reject: (error?: any) => void;
+  resolve: (value?: T | PromiseLike<T>) => void;
+  reject: (error?: any) => void;
 }
 
 /**
@@ -113,9 +113,13 @@ reject: (error?: any) => void;
 */
 export default class Ichigo extends EventEmitter {
   /**
-  * The IPC connection to control
+  * The IPC connection to control the RPC with
   */
   public ipc: DiscordIPC;
+
+  /**
+   * Expecting messages, they get deleted when a message has arrived
+   */
   public expecting: Collection<RPCMessageExpecting> = new Collection();
 
   /**
@@ -134,16 +138,13 @@ export default class Ichigo extends EventEmitter {
   private onMessage(message: any) {
     if (message.cmd === 'DISPATCH' && message.evt === 'READY') {
       this.emit('ready');
-    } 
-    else if (this.expecting.has(message.nonce)) {
+    } else if (this.expecting.has(message.nonce)) {
       const { resolve, reject } = this.expecting.get(message.nonce)!;
       if (message.evt === 'ERROR') reject(new Error(message.data.message));
       else resolve(message.data);
 
-      // eslint-disable-next-line dot-notation
       this.expecting.delete(message.nonce);
-    }
-    else this.emit('debug', message);
+    } else this.emit('debug', message);
   }
 
   /**
@@ -158,7 +159,7 @@ export default class Ichigo extends EventEmitter {
   * @param cmd The command name
   * @param args Any arguments to send 
   */
-  send<T>(cmd: string, args?: { [x: string]: any }) {
+  send<T = any>(cmd: string, args?: { [x: string]: any }) {
     return new Promise<T>((resolve, reject) => {
       const nonce = uuid();
       this.ipc.send(OPCodes.FRAME, { cmd, args, nonce });
@@ -199,11 +200,22 @@ export default class Ichigo extends EventEmitter {
     });
   }
 
+  /** Emitted when the RPC has reached a connection state */
   on(event: 'connect', listener: () => void): this;
+
+  /** Emitted when an error occurs */
   on(event: 'error', listener: (error: any) => void): this;
+
+  /** Emitted when the RPC closes it's connection */
   on(event: 'close', listener: (error: any) => void): this;
+
+  /** Emitted when the RPC has connected with the server */
   on(event: 'open', listener: () => void): this;
+
+  /** Emitted when something goes wrong and Ichigo doesn't know what happened */
   on(event: 'wtf', listener: (m: string) => void): this;
+
+  /** Emitter */
   on(event: string, listener: (...args: any[]) => void) {
     return super.on(event, listener);
   }

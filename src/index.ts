@@ -5,4 +5,5 @@ import Ichigo from './Ichigo';
  * Returns the version of Ichigo
  */
 export const version: string = Constants.VERSION;
-export { Ichigo, Constants };
+export { Constants };
+module.exports = Ichigo; // TODO: Remove this when it becomes outdated
