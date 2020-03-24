@@ -302,5 +302,7 @@ declare module '@augu/ichigo' {
     }
   }
 
+  export default Ichigo.Ichigo;
+  // @ts-ignore
   export = Ichigo;
 }
