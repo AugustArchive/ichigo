@@ -1,7 +1,7 @@
 {
   "name": "@augu/ichigo",
   "description": "💌 Discord RPC client made in TypeScript",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "author": "August <august@augu.dev>",
   "types": "index.d.ts",
@@ -35,7 +35,6 @@
     "@typescript-eslint/parser": "2.27.0",
     "@types/node": "12.12.31",
     "eslint": "6.8.0",
-    "typescript": "3.8.3",
-    "typedoc": "0.17.4"
+    "typescript": "3.8.3"
   }
 }

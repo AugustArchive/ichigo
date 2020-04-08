@@ -1,4 +1,5 @@
 import { OPCodes, RequestCommand } from './util/Constants';
+import NotConnectedError from './errors/NotConnectedError';
 import { EventEmitter } from 'events';
 import { Collection } from '@augu/immutable';
 import DiscordIPC from './DiscordIPC';
@@ -103,7 +104,7 @@ interface ActivityOptions {
   }
 }
 
-interface RPCMessageExpecting<T = any> {
+interface ExpectedMessage<T = any> {
   resolve: (value?: T | PromiseLike<T>) => void;
   reject: (error?: any) => void;
 }
@@ -111,32 +112,39 @@ interface RPCMessageExpecting<T = any> {
 /**
 * The client itself, used for "controlling" the RPC connection
 */
-export default class Ichigo extends EventEmitter {
-  /**
-  * The IPC connection to control the RPC with
-  */
-  public ipc: DiscordIPC;
-
+export default class Client extends EventEmitter {
   /**
    * Expecting messages, they get deleted when a message has arrived
    */
-  public expecting: Collection<RPCMessageExpecting> = new Collection();
+  public expecting: Collection<ExpectedMessage>;
 
   /**
-  * Creates a new instance of the Ichigo client
-  * @param clientID The client ID to use
-  */
+   * If the RPC client has connected
+   */
+  public connected: boolean;
+
+  /**
+   * The IPC connection to control the RPC with
+   */
+  public ipc: DiscordIPC;
+
+  /**
+   * Creates a new instance of the Ichigo client
+   * @param clientID The client ID to use
+   */
   constructor(clientID: string) {
     super();
 
+    this.expecting = new Collection();
+    this.connected = false;
     this.ipc = new DiscordIPC(clientID);
-    this._addExternalListeners();
 
-    this.ipc.on('message', this.onMessage.bind(this));
+    this._addExternalListeners();
   }
 
   private onMessage(message: any) {
     if (message.cmd === 'DISPATCH' && message.evt === 'READY') {
+      this.connected = true;
       this.emit('ready');
     } else if (this.expecting.has(message.nonce)) {
       const { resolve, reject } = this.expecting.get(message.nonce)!;
@@ -155,11 +163,13 @@ export default class Ichigo extends EventEmitter {
   }
 
   /**
-  * Sends a packet to Discord (if it's not a function already)
-  * @param cmd The command name
-  * @param args Any arguments to send 
-  */
+   * Sends a packet to Discord (if it's not a function already)
+   * @param cmd The command name
+   * @param args Any arguments to send 
+   */
   send<T = any>(cmd: string, args?: { [x: string]: any }) {
+    if (!this.connected) throw new NotConnectedError();
+
     return new Promise<T>((resolve, reject) => {
       const nonce = uuid();
       this.ipc.send(OPCodes.FRAME, { cmd, args, nonce });
@@ -168,9 +178,9 @@ export default class Ichigo extends EventEmitter {
   }
 
   /**
-  * Sets the activity of the RPC
-  * @param activity The activity to set
-  */
+   * Sets the activity of the RPC
+   * @param activity The activity to set
+   */
   setActivity(activity: ActivityOptions) {
     return this.send(RequestCommand.SetActivity, {
       pid: process.pid,
@@ -179,6 +189,8 @@ export default class Ichigo extends EventEmitter {
   }
 
   private _addExternalListeners() {
+    this.ipc.on('message', this.onMessage.bind(this));
+
     this.ipc.on('close', (event) => {
       this.emit('debug', `Disconnected from Discord:\n${event}`);
       this.emit('close', event);

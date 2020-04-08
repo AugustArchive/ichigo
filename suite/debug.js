@@ -1,4 +1,4 @@
-const Ichigo = require('../build');
+const { Client: Ichigo } = require('../build');
 const rpc = new Ichigo('519521041966563338');
 
 rpc.on('open', () => console.log('Opened a connection'));

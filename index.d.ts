@@ -168,7 +168,7 @@ declare module '@augu/ichigo' {
     /**
      * The instance used as an "controller" of the RPC connection
      */
-    export class Ichigo {
+    export class Client {
       /**
        * Creates a new instance of the Ichigo instance
        * @param clientID The client ID
@@ -184,6 +184,11 @@ declare module '@augu/ichigo' {
        * All of the expecting messages will be here
        */
       public expecting: Collection<ExpectingMessage>;
+
+      /**
+       * If the client has connected or not
+       */
+      public connected: boolean;
 
       /**
        * Connects to the local IPC server
@@ -302,7 +307,6 @@ declare module '@augu/ichigo' {
     }
   }
 
-  export default Ichigo.Ichigo;
   // @ts-ignore
   export = Ichigo;
 }
