@@ -5,4 +5,4 @@ import Client from './Client';
  * Returns the version of Ichigo
  */
 export const version: string = Constants.VERSION;
-export { Constants, Client };
+export { Constants, Client, Client as Ichigo }; // add 'Ichigo' as backwards compatibility

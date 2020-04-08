@@ -240,6 +240,8 @@ declare module '@augu/ichigo' {
       public on(event: 'wtf', listener: (message: string) => void): this;
     }
 
+    export { Client as Ichigo };
+
     /**
      * The constants for Ichigo
      */
@@ -307,6 +309,5 @@ declare module '@augu/ichigo' {
     }
   }
 
-  // @ts-ignore
   export = Ichigo;
 }
