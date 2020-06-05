@@ -159,6 +159,7 @@ export default class Client extends EventEmitter {
    * Connects to the IPC server
    */
   connect() {
+    if (this.connected) throw new Error('RPC is already connected?');
     this.ipc.connect();
   }
 
@@ -186,6 +187,16 @@ export default class Client extends EventEmitter {
       pid: process.pid,
       activity
     });
+  }
+
+  /**
+   * Disconnects the RPC from Discord
+   */
+  disconnect() {
+    if (!this.connected) throw new NotConnectedError();
+
+    this.ipc.disconnect();
+    this.emit('close', new Error('Program has manually disconnected'));
   }
 
   private _addExternalListeners() {

@@ -209,6 +209,11 @@ declare module '@augu/ichigo' {
       public setActivity(activity: ActivityOptions): Promise<any>;
 
       /**
+       * Disconnects the RPC from Discord
+       */
+      public disconnect(): void;
+
+      /**
        * Emitted when the connection is opened
        */
       public on(event: 'ready', listener: (data: any) => void): this;

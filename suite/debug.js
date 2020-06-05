@@ -16,3 +16,7 @@ rpc.on('ready', () => {
 });
 
 rpc.connect();
+
+process.on('SIGINT', () => {
+  rpc.disconnect();
+});
