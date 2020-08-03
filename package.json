@@ -27,7 +27,7 @@
     "lint": "eslint src --ext .ts --fix"
   },
   "dependencies": {
-    "@augu/immutable": "0.3.1"
+    "@augu/immutable": "0.3.2"
   },
   "devDependencies": {
     "@augu/eslint-config": "1.4.0",
